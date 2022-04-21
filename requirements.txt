@@ -1,5 +1,6 @@
+pip=22.0.4
 matplotlib==3.5.1
-opencv_python==4.5.5.62
+opencv_python==4.5.5.64
 pandas==1.4.2
 Pillow==9.1.0
 protobuf==3.20.0
