@@ -62,7 +62,6 @@ def blur_logos(path, option):
 
           # Initialize output image
           blur = cv2.resize(temp, (w, h), interpolation=cv2.INTER_NEAREST)
-
         # Insert ROI back into image
         image[y:y+h, x:x+w] = blur
         cv2.rectangle(temp,(x,y),(x+w,y+h),(0,255,0),2)
@@ -77,8 +76,7 @@ option = st.selectbox(
     'Blur Method',
     ('Gaussian Blur', 'Pixel Blur'))
 showBB = st.checkbox('Show Location of Logo')
-button_pressed = st.button('Blur Logo'
-                           )
+button_pressed = st.button('Blur Logo')
 
 if button_pressed and image:
     image = Image.open(image)
