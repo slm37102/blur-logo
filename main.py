@@ -1,4 +1,3 @@
-import os
 import streamlit as st
 import cv2
 from matplotlib import pyplot as plt
