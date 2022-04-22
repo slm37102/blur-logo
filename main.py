@@ -38,7 +38,7 @@ def blur_logos(path, option):
     # Read in image
     image = cv2.imread(path)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-    temp = image.copy()
+    bb_image = image.copy()
     descriptions = []
     scores = []
     for logo in logos:
@@ -64,9 +64,9 @@ def blur_logos(path, option):
           blur = cv2.resize(temp, (w, h), interpolation=cv2.INTER_NEAREST)
         # Insert ROI back into image
         image[y:y+h, x:x+w] = blur
-        cv2.rectangle(temp,(x,y),(x+w,y+h),(0,255,0),2)
+        cv2.rectangle(bb_image,(x,y),(x+w,y+h),(0,255,0),2)
     if showBB:
-        st.image(temp)
+        st.image(bb_image)
     return image, n_logo, descriptions, scores
 
 st.title('Blur logo')
